@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap");
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img, abbr {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ul li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+legend {
+  color: #000;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+iframe,
+figure {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  color: #636363;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.container-full {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 780px) {
+  .container-full {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.img-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+::-moz-selection {
+  background-color: #AE476F;
+}
+
+::selection {
+  background-color: #AE476F;
+}
+
+p {
+  margin-bottom: 2rem;
+  line-height: 150%;
+}
+
+@media screen and (max-width: 960px) {
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.img-wrapper {
+  background: #CCC;
+  overflow: hidden;
+}
+
+.lazy-blur {
+  -webkit-filter: blur(25px);
+          filter: blur(25px);
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.no-blur {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-filter .6s ease-in, -webkit-transform .8s ease-in-out;
+  transition: -webkit-filter .6s ease-in, -webkit-transform .8s ease-in-out;
+  transition: filter .6s ease-in, transform .8s ease-in-out;
+  transition: filter .6s ease-in, transform .8s ease-in-out, -webkit-filter .6s ease-in, -webkit-transform .8s ease-in-out;
+}
+
+.italic {
+  font-style: italic;
+}
+/*# sourceMappingURL=style.css.map */
