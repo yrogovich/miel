@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miel</title>
+    <title>Агентство недвижимости Миэль</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -26,27 +26,161 @@
 
     <!-- style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Hello!</h1>
+    <!-- preloader -->
+    <div class="preload">
+        <svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+       <path fill="#00D7FD" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
+        c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z">
+            <animateTransform 
+               attributeName="transform" 
+               attributeType="XML" 
+               type="rotate"
+               dur="2s" 
+               from="0 50 50"
+               to="360 50 50" 
+               repeatCount="indefinite" />
+        </path>
+       <path fill="#00D7FD" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
+        c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z">
+            <animateTransform 
+               attributeName="transform" 
+               attributeType="XML" 
+               type="rotate"
+               dur="1s" 
+               from="0 50 50"
+               to="-360 50 50" 
+               repeatCount="indefinite" />
+        </path>
+       <path fill="#00D7FD" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
+        L82,35.7z">
+            <animateTransform 
+               attributeName="transform" 
+               attributeType="XML" 
+               type="rotate"
+               dur="2s" 
+               from="0 50 50"
+               to="360 50 50" 
+               repeatCount="indefinite" />
+        </path>
+        </svg>
+    </div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="header-nav">
+                <a href="index.html" class="logo">
+                    <img class="logo-img" src="img/logo.svg" alt="Агентство недвижимости Миэль">
+                    <img class="logo-text" src="img/logo-text.svg" alt="Нас рекомендуют друзьям">
+                </a>
+
+                <div class="block">
+                    <a href="#map" class="label undeground">Метро «Третьяковская», <br> Москва, Пыжевский переулок, 5стр1</a>
+                    <a href="tel:+74957770370" class="label phone">+7 (495) 777-03-70</a>
+                </div>
+            </div>
+            <!-- /.header-nav -->
+            <div class="header-column">
+                <h1>Сбережем Вам до 50 часов жизни при подборе недвижимости в Москве и МО. Продадим дороже и купим дешевле, чем Вы сами.</h1>
+
+                <div class="header-row">
+
+                    <div class="couple">
+                        <ul class="header-ul">
+                            <li>
+                                <div class="icon">
+                                    <img src="img/icons/header-security.svg" alt="Безопасно">
+                                </div>
+        
+                                <div class="content">
+                                    <div class="title">Безопасно</div>
+                                    <p>Оплата по факту сделки</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <img src="img/icons/header-profitably.svg" alt="Выгодно">
+                                </div>
+        
+                                <div class="content">
+                                    <div class="title">Выгодно</div>
+                                    <p>При покупке новостройки комиссия 0%</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <img src="img/icons/header-document.svg" alt="Экспертно">
+                                </div>
+        
+                                <div class="content">
+                                    <div class="title">Экспертно</div>
+                                    <p>Опыт более 50 000 сделок</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a href="#" class="btn btn-primary">
+                            <span>Бесплатная консультация</span>
+                        </a>
+                    </div>
+                    <!-- /.couple -->
+                    
+
+                    <div class="header-slider">
+                        <div id="slider">
+                            <div class="slide">
+                                <span class="slide-text">Новостройки</span>
+                                <img class="slide-img" data-lazy="img/slider/slide-1.jpg" alt="slide">
+                            </div>
+                            <div class="slide">
+                                <span class="slide-text">Загородная недвижимость</span>
+                                <img class="slide-img" data-lazy="img/slider/slide-1.jpg" alt="slide">
+                            </div>
+                            <div class="slide">
+                                <span class="slide-text">Вторичное жилье</span>
+                                <img class="slide-img" data-lazy="img/slider/slide-1.jpg" alt="slide">
+                            </div>
+                        </div>
+                        <!-- /#slider -->
+                        <div class="slider-progressBar">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                    <!-- /.header-slider -->
+                </div>
+                <!-- /.header-row -->
+            </div>
+            <!-- /.header-column -->
+
+           
+        </div>
+
+       
+
+        <img src="img/decor/header-shapes.png" alt="" class="shapes">
+    </header>
+
+    <!-- <h1>Hello!</h1>
 
     <div class="img-wrapper" style="max-width: 300px;">
         <img 
              class="lazy-blur" 
              data-src="https://lab.logico.ar/lazy-medium-img/arcade.jpg" 
              src="https://lab.logico.ar/lazy-medium-img/arcade-thumb.jpg"/>
-    </div>
+    </div> -->
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.2.0/dist/simpleParallax.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
     <script src="js/index.js"></script>

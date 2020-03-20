@@ -72,9 +72,15 @@ p {
 h1, .h1,
 h2, .h2,
 h3, .h3,
-h4, .h4,
-h5, .h5 {
-    $black: #373737;
+h4, .h4 {
+    @include secondaryFont;
     font-weight: 700;
-    margin-bottom: 1rem;
+    color: $primary;
+
+    margin-bottom: 2rem;
+}
+
+h1, .h1 {
+    font-size: 3.8vh;
+    @include xs(font-size, 2.2rem);
 }

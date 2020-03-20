@@ -1,4 +1,402 @@
-// Your code here
+// preloader
+.preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-out;
+    background-color: $secondary-bg;
+    z-index: 10;
+    svg{
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      display:inline-block;
+      path {
+        fill: $primary;
+      }
+    }
+    &.preload-finish {
+      opacity: 0;
+      pointer-events: none;
+    }
+}
+
+// Logo
+.logo {
+    display: flex;
+    align-items: center;
+    &-img {
+        @media (max-width: $iphone-5) {
+            max-width: 60px;
+        }
+    }
+    &-text {
+        margin-left: 1.5rem;
+        @include xs(display, none);
+    }
+}
+
+// Header
+.header {
+    color: $white;
+    background-color: $secondary-bg;
+    padding: 2rem 0 10rem;
+    position: relative;
+    z-index: 0;
+
+    .shapes {
+        position: absolute;
+        left: 41%;
+        bottom: 0;
+        z-index: -1;
+        transform: translateX(-50%);
+        @media (max-width: 1440px) {
+            left: unset;
+            transform: none;
+            right: 0;
+        }
+    }
+
+    &-container {
+        @include wrapper-full();
+        max-width: 1720px;
+        margin: auto;
+    }
+    &-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        min-height: 12rem;
+
+        .block {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 0 -2.5rem;
+            @include lg-block() {
+                margin: 0 -.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+        .label {
+            display: flex;
+            align-items: center;
+
+            margin: 2.5rem;
+            font-weight: 700;
+            &::before {
+                display: block;
+                margin-right: 2rem;
+                margin-bottom: -6px;
+                width: 40px;
+                height: 36px;
+                content: '';
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            &.phone {
+                font-size: 2.8rem;    
+                &:before {
+                    background-image: url('../img/icons/navbar-phone.svg');
+                }
+            }
+            &.undeground {
+                font-size: 1.6rem;
+                &:before {
+                    background-image: url('../img/icons/m.svg');
+                }
+            }
+            @include lg-block() {
+                margin: .5rem;
+                &:before {
+                    width: 30px;
+                    height: 30px;
+                }
+                &.phone {
+                    font-size: 1.8rem;    
+                }
+                &.undeground {
+                    font-size: 1.4rem;
+                }
+            }
+            @include sm-block() {
+                
+                &.phone {
+                    font-size: 1.4rem;    
+                }
+                &.undeground {
+                    font-size: 1.1rem;
+                }
+            }
+            @include xs-block() {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+        @include md-block() {
+            min-height: unset;
+        }
+    }
+    &-column {
+        max-width: 74rem;
+        width: 46%;
+
+        h1 {
+            color: $white;
+            margin-top: 4rem;
+            margin-bottom: 6rem;
+            @include xs-block() {
+                margin-top: 2rem;
+                margin-bottom: 4rem;
+                text-align: center;
+            }
+        }
+        @media (max-width: 1250px) {
+            max-width: unset;
+            width: 100%;
+        }
+    }
+    &-row {     
+        @media (max-width: 1250px) {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: -1rem;
+            .couple {
+                flex: 1 1 360px;
+                margin: 1rem;
+            }
+        }
+    }
+    &-ul {
+        margin-bottom: 6rem;
+        li {
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+           
+        }
+        p {
+            margin-bottom: 0;
+        }
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 4.2rem;
+            margin-right: 2rem;
+        }
+        .title {
+            font-size: 2.6rem;
+            @include secondaryFont;
+            color: $primary;
+        }
+        @include xs-block() {
+            margin-bottom: 4rem;
+            li {
+                margin-bottom: 2rem;
+            }
+            p {
+                font-size: 1.3rem;
+            }
+            .title {
+                font-size: 2rem;
+            }
+        }
+    }
+    &-slider {
+        padding-bottom: 42%;
+
+        background-color: #141414;
+        box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.25);
+
+        position: absolute;
+        z-index: 1;
+         
+        width: 53%;
+        right: 0;
+        top: 60%;
+        transform: translateY(-50%);
+        @media (max-width: 1250px) {
+            position: relative;
+            transform: none;
+            flex: 2 1 400px;
+            margin: 1rem;
+        }
+        @include sm-block() {
+            width: 100%;
+            margin-top: 6rem;
+            padding-bottom: 75%;          
+        }
+    }
+    @include sm-block() {
+        padding-bottom: 8rem;
+        .btn {
+            display: block;
+            text-align: center;
+        }
+    }
+}
+#slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .slide {
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        &-text {
+            position: absolute;
+            left: 3rem;
+            bottom: 5rem;
+
+            font-size: 3.8rem;
+            @include secondaryFont;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $white;
+            @media (max-width: 1400px) {
+                font-size: 2.8rem;
+                bottom: 5.5rem;
+                margin-right: 13rem;
+            }
+            @include xs-block() {
+                text-align: center;
+                display: block;
+                left: 3rem;
+                right: 3rem;
+                margin-right: 0;
+                bottom: 2.5rem;
+            }
+        }
+    }
+    .slick-list {
+        height: 100%;
+        @media (max-width: 1199px) {
+            div {
+                height: 100%;
+            }            
+        }
+    }
+}
+.slick-dots {
+    bottom: 6.6rem;
+
+    display: inline-block;
+    right: 3rem;
+    width: auto;
+    padding: 0;
+    
+    li {
+        button {
+            width: 16px;
+            height: 16px;
+            background: rgba($white, .5);
+            margin: 0.5rem;
+            &:before {
+                display: none;
+            }
+        }
+        &.slick-active button {
+            background-color: $primary;
+        }
+    }
+    @include xs-block() {
+        bottom: -3rem;
+        right: unset;
+        width: 100%;
+    }
+}
+.slider-progressBar {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background-color: rgba($white, .5);
+    .progress {
+        height: 100%;
+        background-color: $primary;
+    }
+}
+
+// Button styles
+.btn {
+    display: inline-block;
+    border: none;
+    font-weight: 700;
+    border-radius: 20rem;
+
+    &.btn-primary {
+        padding: 2.8rem 7rem 2.8rem 4rem;
+        font-size: 1.8rem;
+
+        background: $btn-bg;
+        box-shadow: $btn-shadow;
+
+        transition: box-shadow .2s ease-in-out, transform .2s ease-in;
+        span {
+            display: inline-block;
+            position: relative;
+            transition: transform .2s ease-in;
+            &:after {
+                content: url('../img/icons/btn-arrow.svg');
+                position: absolute;
+                top: 10%;
+                right: -3rem;
+                transition: transform .4s ease-in, opacity .3s ease-in-out;
+            }
+        }
+        &:hover {
+            box-shadow: $btn-shadow-hover;
+            span {
+                transform: translateX(1.5rem);
+                &:after {
+                    transform: translateX(2rem);
+                    opacity: 0;
+                }
+            }
+        }
+        &:active {
+            box-shadow: $btn-shadow-active;
+            transform: scale(.95);
+            span {
+                transform: translateX(1.5rem) scale(1.05);
+            }
+        }
+        @include sm-block() {
+            padding: 2.4rem 3.2rem 2.4rem 3.2rem;
+            font-size: 1.4rem;
+            span:after {
+                display: none;
+            }
+        }
+    }
+}
+
 
 //For lazy styles
 .img-wrapper {

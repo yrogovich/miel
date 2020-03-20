@@ -1,3 +1,6 @@
 @mixin primaryFont {
-    
+    font-family: 'Open Sans', sans-serif;
+}
+@mixin secondaryFont {
+    font-family: 'Merriweather', serif;
 }

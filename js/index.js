@@ -1,4 +1,8 @@
-console.log('ok');
+window.addEventListener('load', () => {
+    const preload = document.querySelector('.preload');
+    preload.classList.add('preload-finish');
+});
+
 $(function() {
     // Form handler
     $('form').submit(function(event) {
@@ -52,6 +56,78 @@ $(function() {
         });
     } catch (error) {
         console.log(`SmoothScroll plugin error: ${error}`);
+    }
+
+    try {
+        let autoplaySpeed = 3000; //ms
+        let isPause;
+        let tick;
+        let percentTime;
+        let $slider = $('#slider');
+        let $bar = $('.slider-progressBar .progress');
+
+        // Events
+        $slider.on({
+            mousedown: resumeSlider,
+            mouseup: pauseSlider,
+            mouseleave: pauseSlider,
+            init: () => {
+                resetProgressbar();
+                startProgressbar();
+            },
+            beforeChange: function(event, slick, currentSlide, nextSlide){
+                resetProgressbar();           
+            },
+            afterChange: function(event, slick, currentSlide, nextSlide){
+                startProgressbar();
+            }
+        })
+        
+        // Init
+        $slider.slick({
+            lazyLoad: 'progressive',
+            dots: true,
+            arrows: false,
+            // fade: true,
+            speed: 800,
+        });
+       
+        // Functions
+        function resumeSlider() {
+            isPause = true;
+        }
+        function pauseSlider() {
+            isPause = false;
+        }
+        
+        function startProgressbar() {
+            percentTime = 0;
+            isPause = false;
+            tick = setInterval(interval, 10);
+        }
+        function interval() {
+            if(isPause === true) {
+                return;
+            }
+
+            percentTime += 1000 / (autoplaySpeed + 0.1);
+            $bar.css({
+                width: percentTime + "%"
+            });
+            
+            if(percentTime >= 100) {
+                $slider.slick('slickNext');
+            }
+        }
+        
+        function resetProgressbar() {
+            $bar.css({
+                width: 0 + '%' 
+            });
+            clearTimeout(tick);
+        }
+    } catch (error) {
+        console.log(`SlickSlider plugin error: ${error}`);
     }
 
     /*
