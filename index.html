@@ -95,9 +95,9 @@
                             </li>
                         </ul>
 
-                        <a href="#" class="btn btn-primary">
+                        <div data-fancybox data-src="#free-consult-modal" class="btn btn-primary">
                             <span>Бесплатная консультация</span>
-                        </a>
+                        </div>
                     </div>
                     <!-- /.couple -->
                     
@@ -110,11 +110,19 @@
                             </div>
                             <div class="slide">
                                 <span class="slide-text">Загородная недвижимость</span>
-                                <img class="slide-img" data-lazy="img/slider/slide-1.jpg" alt="slide">
+                                <img class="slide-img" data-lazy="img/slider/slide-2.jpg" alt="slide">
                             </div>
                             <div class="slide">
                                 <span class="slide-text">Вторичное жилье</span>
-                                <img class="slide-img" data-lazy="img/slider/slide-1.jpg" alt="slide">
+                                <img class="slide-img" data-lazy="img/slider/slide-3.jpg" alt="slide">
+                            </div>
+                            <div class="slide">
+                                <span class="slide-text">Инвестиции в недвижимость</span>
+                                <img class="slide-img" data-lazy="img/slider/slide-4.jpg" alt="slide">
+                            </div>
+                            <div class="slide">
+                                <span class="slide-text">Недвижимость за рубежом</span>
+                                <img class="slide-img" data-lazy="img/slider/slide-5.jpg" alt="slide">
                             </div>
                         </div>
                         <!-- /#slider -->
@@ -132,6 +140,99 @@
         <img src="img/decor/header-shapes.png" alt="" class="shapes">
     </header>
 
+    <div class="section" id="we-support-with">
+        <div class="container">
+            <div class="h2 decor">
+                <span>Мы помогаем с:</span>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="content">
+                        <div class="icon">
+                            <img src="img/support-features/icon-1.svg" alt="Продажа квартир">
+                        </div>
+                        <span class="label">Продажа квартир</span>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.feature -->
+                <div class="feature">
+                    <div class="content">
+                        <div class="icon">
+                            <img src="img/support-features/icon-2.svg" alt="Покупка квартир">
+                        </div>
+                        <span class="label">Покупка квартир</span>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.feature -->
+                <div class="feature">
+                    <div class="content">
+                        <div class="icon">
+                            <img src="img/support-features/icon-3.svg" alt="Продажа залогового имущества">
+                        </div>
+                        <span class="label">Продажа залогового имущества</span>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.feature -->
+                <div class="feature">
+                    <div class="content">
+                        <div class="icon">
+                            <img src="img/support-features/icon-4.svg" alt="Помощь с ипотекой">
+                        </div>
+                        <span class="label">Помощь с ипотекой</span>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.feature -->
+                <div class="feature">
+                    <div class="content">
+                        <div class="icon">
+                            <img src="img/support-features/icon-5.svg" alt="Подбор квартир в новостройках за 1 день">
+                        </div>
+                        <span class="label">Подбор квартир в <br> новостройках за 1 день</span>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.feature -->
+                <div class="feature">
+                    <div class="content">
+                        <div class="icon">
+                            <img src="img/support-features/icon-6.svg" alt="Продажа загородной недвижимости">
+                        </div>
+                        <span class="label">Продажа загородной недвижимости</span>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.feature -->
+                <div class="feature">
+                    <div class="content">
+                        <div class="icon">
+                            <img src="img/support-features/icon-7.svg" alt="Покупка загородной недвижимости">
+                        </div>
+                        <span class="label">Покупка загородной недвижимости</span>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.feature -->
+                <div class="feature">
+                    <div class="content">
+                        <div class="icon">
+                            <img src="img/support-features/icon-8.svg" alt="Юридическое сопровождение">
+                        </div>
+                        <span class="label">Юридическое сопровождение</span>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.feature -->
+            </div>
+            <!-- /.features -->
+        </div>
+    </div>
+    <!-- /#we-support-with.section -->
+
     <!-- 
     <div class="img-wrapper" style="max-width: 300px;">
         <img 
@@ -139,6 +240,39 @@
              data-src="https://lab.logico.ar/lazy-medium-img/arcade.jpg" 
              src="https://lab.logico.ar/lazy-medium-img/arcade-thumb.jpg"/>
     </div> -->
+
+
+    <!-- Modal HTML embedded directly into document -->
+    <div id="free-consult-modal" class="modal"> 
+        <div class="h3">Бесплатная консультация</div>
+        <div class="subtitle">Оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время.</div>
+        <form class="content">
+            <input type="hidden" name="form_name" value="Перезвоните мне">
+
+            <div class="input-wrapper">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            <!-- /.input-wrapper -->
+            <div class="input-wrapper">
+                <input type="email" name="email" placeholder="Ваш E-mail" required>
+            </div>
+            <!-- /.input-wrapper -->
+            <div class="input-wrapper">
+                <input type="text" name="phone" placeholder="Номер телефона" required>
+            </div>
+            <!-- /.input-wrapper -->
+
+            <button class="btn btn-primary">
+                <span>Получить консультацию</span>
+            </button>
+        </form>
+    </div>
+
+    <!-- Modal HTML embedded directly into document -->
+    <div id="thanks-modal" class="modal"> 
+        <div class="h3">Заявка отправлена!</div>
+        <div class="subtitle">В ближайшее время наш консультант свяжется с вами</div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

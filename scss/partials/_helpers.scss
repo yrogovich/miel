@@ -4,3 +4,20 @@
 .bold {
     font-weight: 700;
 }
+.block {
+    display: block;
+}
+.text-center {
+    text-align: center;
+}
+.primary {
+    color: $primary;
+}
+
+.disable-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+.compensate-for-scrollbar {
+    margin-right: 0!important;
+}

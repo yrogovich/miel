@@ -48,6 +48,21 @@
     }
 }
 
+//For lazy styles
+.img-wrapper {
+    background: #CCC;
+    overflow: hidden;
+}
+.lazy-blur {
+    filter: blur(25px);
+    transform: scale(1.4);
+}
+.no-blur {
+    filter: blur(0);
+    transform: scale(1);
+    transition: filter .6s ease-in, transform .8s ease-in-out;
+}
+
 // Logo
 .logo {
     display: flex;
@@ -68,6 +83,7 @@
     color: $white;
     background-color: $secondary-bg;
     padding: 2rem 0 10rem;
+    margin-bottom: 4rem;
     position: relative;
     z-index: 0;
 
@@ -181,7 +197,7 @@
             margin-top: 4rem;
             margin-bottom: 6rem;
             @include xs-block() {
-                margin-top: 2rem;
+                margin-top: 4rem;
                 margin-bottom: 4rem;
                 text-align: center;
             }
@@ -266,6 +282,9 @@
             margin-top: 6rem;
             padding-bottom: 75%;          
         }
+    }
+    @include lg-block() {
+        margin-bottom: 0;
     }
     @include sm-block() {
         padding-bottom: 8rem;
@@ -371,11 +390,13 @@
     border: none;
     font-weight: 700;
     border-radius: 20rem;
+    cursor: pointer;
 
     &.btn-primary {
         padding: 2.8rem 7rem 2.8rem 4rem;
         font-size: 1.8rem;
 
+        color: $white;
         background: $btn-bg;
         box-shadow: $btn-shadow;
 
@@ -419,18 +440,131 @@
     }
 }
 
+//@include
+.section {
+    padding: 10rem 0;
+    @include sm-block() {
+        padding: 5rem 0;
+    }
+}
+#we-support-with {
+    background: $white url('../img/triangle-bg.jpg') center / cover no-repeat;
+}
+.features {
+    @include row-flex();
 
-//For lazy styles
-.img-wrapper {
-    background: #CCC;
-    overflow: hidden;
+    @include xs-block() {
+        justify-content: center;
+    }
 }
-.lazy-blur {
-    filter: blur(25px);
-    transform: scale(1.4);
+.feature {
+    @include col();
+    @include size(3);
+    @include size-md(4);
+    @include size-sm(6);
+    // @include size-xs(12);
+ 
+    position: relative;
+
+    max-width: 257px;
+    height: 257px;
+    margin-bottom: 6rem;
+
+    .content {
+        height: 100%;
+        z-index: 1;
+        position: relative;
+       
+        background-color: $white;
+        box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.25);
+        padding: 2rem 1rem; 
+        text-align: center;      
+    }
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 15rem;
+        margin-bottom: 1rem;
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+    .label {
+        font-weight: 700;
+    }    
+    &:before {
+        content: '';
+        position: absolute;
+        left: -1.3rem;
+        top: -1.3rem;
+        background: url(../img/decor/card-triangle.svg) center / contain no-repeat;
+        width: 162px;
+        height: 157px;
+        display: flex;
+    }
+    @include xs-block() {
+        height: unset;
+        .icon {
+            height: 10rem;
+        }
+        .label {
+            font-size: 1.2rem;
+        }
+        &:before {
+            left: -1rem;
+            top: -1rem;
+            width: 105px;
+            height: 100px;
+        }
+    }
 }
-.no-blur {
-    filter: blur(0);
-    transform: scale(1);
-    transition: filter .6s ease-in, transform .8s ease-in-out;
+
+// Modal
+.modal {
+    display: none;
+    border: 1rem solid $white;
+    box-shadow: inset 0px 0px 0px 3px #B5B9C2, 0px 11px 15px rgba(0, 0, 0, 0.25);
+    padding: 5rem;
+    width: 75rem;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+        overflow: visible;
+
+    h3,.h3 {
+        margin-bottom: 1rem;
+    }
+    .subtitle {
+        margin-bottom: 4rem;
+    }
+    .content {
+        max-width: 57rem;
+        margin: auto;
+    }
+    form {
+        margin: 4rem 0 3rem 0;
+        .btn {
+            margin-top: 3rem;
+        }
+    }
+    &:before,
+    &:after {
+        position: absolute;
+        z-index: -1;
+    }
+    &:before {
+        content: url('../img/decor/card-triangle.svg');
+        top: -2rem;
+        left: -2rem;
+    }
+    &:after {
+        content: url('../img/decor/card-triangle-bottom.svg');
+        bottom: -2.4rem;
+        right: -2rem;
+    }
+    
 }

@@ -25,7 +25,7 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
     scroll-behavior: smooth;
-    // overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -83,4 +83,50 @@ h4, .h4 {
 h1, .h1 {
     font-size: 3.8vh;
     @include xs(font-size, 2.2rem);
+}
+
+h2, .h2 {
+    font-size: 3.6rem;
+    @include sm-block() {
+        font-size: 2.4rem;
+    }
+    &.decor {
+        margin-bottom: 6rem;     
+        text-align: center;
+        span {
+            position: relative;
+            &:before,
+            &:after {
+                content: '';
+                width: 98px;
+                height: 3px;
+                background-color: #B5B9C2;
+                position: absolute;
+            }
+            &:before {
+                bottom: -.5rem;
+                left: 0;
+            }
+            &:after {
+                top: -.5rem;
+                right: 0;
+            }
+        }
+    }
+}
+h3,.h3 {
+    font-size: 2.4rem;
+    @include sm-block() {
+        font-size: 2rem;
+    }
+}
+
+input,
+textarea {
+    background-color: #F9F9F9;
+    border: 1px solid #C6C6C6;
+    padding: 2rem;
+    color: #7D7D7D;
+    margin-bottom: 1rem;
+    width: 100%;
 }

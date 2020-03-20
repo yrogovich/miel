@@ -19,9 +19,18 @@ $(function() {
             data: msg,
             success: function(data) {
                 console.log('form ok');
+                jQuery.fancybox.close();
+                jQuery.fancybox.open({
+                    src: '#thanks-modal', 
+                    modal: true
+                });
+                setTimeout(() => { 
+                    jQuery.fancybox.close();
+                }, 2000);
             },
             error: function () {
                 console.log('form error');
+                jQuery.fancybox.close();
             }
         });
     });
@@ -129,22 +138,6 @@ $(function() {
     } catch (error) {
         console.log(`SlickSlider plugin error: ${error}`);
     }
-
-    /*
-    //Get scroll width
-    function getScrollWidth() {
-        let div = document.createElement('div');
-        div.style.overflowY = 'scroll';
-        div.style.width = '50px';
-        div.style.height = '50px';
-        document.body.append(div);
-        let scrollWidth = div.offsetWidth - div.clientWidth;
-
-        div.remove();
-
-        return scrollWidth;
-    }
-    */
 
     /*
     //  Show ymaps on scroll
