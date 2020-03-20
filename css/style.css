@@ -209,6 +209,49 @@ h1, .h1 {
   fill: #951A4A;
 }
 
+.preload svg .line1,
+.preload svg .line3 {
+  -webkit-animation: preloader-rotate 2s infinite linear;
+          animation: preloader-rotate 2s infinite linear;
+  -webkit-transform-origin: 50px 50px;
+          transform-origin: 50px 50px;
+}
+
+.preload svg .line2 {
+  -webkit-animation: preloader-rotate-inverse 1s infinite linear;
+          animation: preloader-rotate-inverse 1s infinite linear;
+  -webkit-transform-origin: 50px 50px;
+          transform-origin: 50px 50px;
+}
+
+@-webkit-keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes preloader-rotate-inverse {
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes preloader-rotate-inverse {
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
 .preload.preload-finish {
   opacity: 0;
   pointer-events: none;

@@ -11,15 +11,37 @@
     transition: .5s ease-out;
     background-color: $secondary-bg;
     z-index: 10;
-    svg{
-      width: 100px;
-      height: 100px;
-      margin: 20px;
-      display:inline-block;
-      path {
-        fill: $primary;
-      }
+    svg {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        display:inline-block;
+
+        path {
+            fill: $primary;
+        }
+        .line1,
+        .line3  {
+            animation: preloader-rotate 2s infinite linear;
+            transform-origin: 50px 50px;
+        }
+        .line2 {
+            animation: preloader-rotate-inverse 1s infinite linear;
+            transform-origin: 50px 50px;
+        }
     }
+
+    @keyframes preloader-rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes preloader-rotate-inverse {
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+
     &.preload-finish {
       opacity: 0;
       pointer-events: none;
