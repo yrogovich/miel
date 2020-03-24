@@ -111,6 +111,12 @@ h2, .h2 {
                 top: -.5rem;
                 right: 0;
             }
+            @include sm-block() {
+                &:before,
+                &:after {
+                    display: none;
+                }
+            }
         }
     }
 }
