@@ -525,7 +525,19 @@
     @include sm-block() {
         padding: 5rem 0;
     }
+    .subtitle {
+        margin: -4rem auto 3rem auto;
+        max-width: 77rem;
+        text-align: center;
+    }
 }
+.extended-section {
+    padding: 10rem 0 18rem;
+    @include sm-block() {
+        padding: 5rem 0 13rem;
+    }
+}
+
 #we-support-with {
     background: $white url('../img/triangle-bg.jpg') center / cover no-repeat;
 }
@@ -541,7 +553,6 @@
     @include size(3);
     @include size-md(4);
     @include size-sm(6);
-    // @include size-xs(12);
  
     position: relative;
 
@@ -605,6 +616,11 @@
     }
 }
 
+#services {
+    .body {
+        text-align: center;
+    }
+}
 .services {
     @include row-flex();
 
@@ -616,23 +632,25 @@
         }
         @include size-xs(12);
 
+        background-color: $white;
         border: 1rem solid $white;
         box-shadow: inset 0px 0px 0px 3px #B5B9C2, 0px 11px 15px rgba(0, 0, 0, 0.25);
         padding: 1rem;
         margin-bottom: 3rem;
         .img-wrapper {
             margin: -2rem;
-            max-height: 46.5rem;
+            position: relative;
+            padding-bottom: 82%;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
         
         .body {
             margin: 1rem;
             margin-top: 5rem;
-            text-align: center;
-            min-height: 40rem;
-            @include xs-block() {
-                min-height: unset;
-            }
 
             display: flex;
             flex-direction: column;
@@ -714,16 +732,12 @@
     }
 }
 
-.subtitle {
-    margin: -4rem auto 3rem auto;
-    max-width: 77rem;
-    text-align: center;
-}
 
 #ww-realty {
     background: $white url('../../img/map-bg.png') top center/ contain no-repeat;
     margin-top: 4rem;
     padding-top: 6rem;
+    text-align: center;
     @include sm-block() {
         margin-top: unset;
         padding-top: 5rem;
@@ -739,6 +753,9 @@
         @include sm-block() {
             margin-bottom: 0;
         }
+    }
+    p {
+        margin-bottom: 0;
     }
 }
 .countries {
@@ -777,6 +794,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: -0.5rem;
+    margin-bottom: 2.5rem;
     .factor {
         width: 154px;
         height: 198px;
@@ -794,11 +812,229 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: .5rem
+            padding: .5rem;
         }
     }
 }
 
+.levitating-block {
+    border: 1rem solid $white;
+    box-shadow: inset 0px 0px 0px 3px #B5B9C2, 0px 11px 15px rgba(0, 0, 0, 0.25);
+    background-color: $white;
+    padding: 4rem; 
+    margin-top: -18rem;
+    margin-bottom: 10rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .icon {
+        margin-right: 5rem;
+        flex: 1 1 100px;
+    }
+    .content {
+        flex: 7 1 300px;
+    }
+    p {
+        margin-bottom: 0;
+        font-weight: 700;
+    }
+    @include md-block() {
+        align-items: flex-start;
+    }
+    @include sm-block() {
+        margin-top: -13rem;
+        margin-bottom: 5rem;
+        padding: 2rem;
+    }
+    @include xs-block() {
+        .icon {
+            display: none;
+        }
+    }
+}
+
+#portfolio {
+    background: $gray url('../img/triangle-wide-bg.jpg') center / cover no-repeat;
+    .services {
+        justify-content: center;
+        margin-bottom: 2rem;
+        .service {
+            @include size(4);
+            @include size-md(6);
+            @include size-sm(12);
+
+            max-width: 36rem;
+            p {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+.heading {
+    padding: 1.4rem 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: $white;
+    text-transform: uppercase;
+    background-color: $secondary-bg;
+    vertical-align: middle;
+    .badge {
+        width: 35px;
+        height: 25px;
+        margin-right: 2rem;
+        vertical-align: middle;
+    }
+}
+.primary-ul {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    li {
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        &:before {
+            content: '';
+            display: inline-block;
+            width: .5rem;
+            height: .5rem;
+            margin-right: 1rem;
+            background-color: $primary;
+            margin-left: -1.5rem;
+            vertical-align: middle;
+        }
+    }
+}
+
+#quiz-section {
+    background: $secondary-bg url('../img/quiz-bg.jpg') center / cover no-repeat;
+    height: 763px;
+}
+
+#how-we-work {
+    .steps {
+        max-width: 100%;
+        max-height: 10rem;
+        margin: 5rem auto 3rem auto;
+        display: block;
+        
+        @include md-block() {
+            display: none;
+        }
+    }
+    .features {
+        justify-content: center;
+        .feature {
+            height: unset;
+            .icon {
+                height: 13rem;
+                margin-bottom: 2rem;
+                @include lg-block() {
+                    height: 10;
+                }
+                @include xs-block() {
+                    height: 6rem;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+    .plan {
+        margin: 5rem 0 2rem;
+    }
+}
+.plan {
+    @include row-flex();
+
+    counter-reset: step; 
+    .step {
+        @include col();
+        @include size(2);
+        @include size-md(3);
+        @include size-xs(4);
+
+        text-align: center;
+        margin-bottom: 3rem;
+
+        .icon {
+            width: 10rem;
+            height: 10rem;
+            background-color: $white;
+
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-bottom: 2rem;
+            border: 1px solid #BEBEBE;
+            position: relative;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                padding: 2rem;
+            }
+            &:after {
+                counter-increment: step;           
+                content: counter(step, decimal-leading-zero);
+
+                width: 25px;
+                height: 25px;
+                background-color: $primary;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 50%;
+                color: $white;
+                @include secondaryFont();
+                font-weight: 700;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &:before {
+                content: url('../../img/right-plan/arrow.svg');
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                transform: translate(3px, -50%);
+                
+            }
+        }
+        .title {
+            display: block;
+            border-top: 5px solid $primary;
+            padding-top: 1rem;
+            font-size: 1.4rem;
+        }
+        &:nth-child(6n) {
+            .icon:before {
+                display: none;
+            }
+        }
+        @include md-block() {  
+            .icon:before {
+                display: none;
+            }
+        }
+        &:last-child {
+            .icon:after {
+                background-color: $whatsapp;
+            }
+        }
+        @include xs-block() {
+            .icon{
+                width: 8rem;
+                height: 8rem;
+            }
+            .title {
+                font-size: 1.1rem;
+                margin: -1rem;
+            }
+        }
+    }
+}
 
 // Modal
 .modal {
