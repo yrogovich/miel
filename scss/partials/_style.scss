@@ -389,6 +389,7 @@
 .btn {
     display: inline-block;
     border: none;
+    text-align: center;
     font-weight: 700;
     border-radius: 20rem;
     cursor: pointer;
@@ -437,12 +438,16 @@
             span:after {
                 display: none;
             }
+            &:hover {
+                span {
+                    transform: none;
+                }
+            }
         }
     }
     &.btn-common {
         font-size: 1.4rem;
         padding: 3rem;
-        text-align: center;
         background-color: $primary;
         color: $white;
         transition: box-shadow .2s ease-in-out, transform .2s ease-in;
@@ -466,7 +471,6 @@
 
         transition: .3s;
         vertical-align: middle;
-        text-align: center;
         &:hover {
             background-color: $primary;
             color: $white;
@@ -516,6 +520,65 @@
             padding: 2rem;
             font-size: 1.4rem;
         }
+    }
+    &.btn-filled {
+        color: $primary;
+        background-color: $white;
+        padding: 2rem 3rem;
+
+        font-size: 2rem;
+        font-weight: 700;
+
+        transition: .3s;
+        vertical-align: middle;
+
+        &:active {
+            transform: scale(.95);
+        }
+
+        &.btn-phone:before,
+        &.btn-whatsapp:before {
+            content: '';
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-right: 1.4rem;
+            @include xs-block() {
+                width: 24px;
+                height: 24px;
+                margin-right: 1rem;
+            }
+        }
+        &.btn-phone{
+            &:before {
+                background-image: url('../img/icons/navbar-phone.svg');
+            }
+            &:hover {
+                box-shadow: 0 0 10px $white;
+            }
+        }
+        &.btn-whatsapp{
+            color: $white;
+            background-color: $whatsapp;
+            &:before {
+                background-image: url('../img/icons/whatsapp.svg');
+                filter: contrast(1.5);
+            }
+            &:hover {
+                box-shadow: 0 0 10px $whatsapp;
+            }
+        }
+        @include xs-block() {
+            padding: 2rem;
+            font-size: 1.4rem;
+        }
+    }
+    @media (max-width: $iphone-5) {
+        font-size: 1.2rem!important;
     }
 }
 
@@ -711,6 +774,9 @@
         box-shadow: inset 0px 0px 0px 3px #B5B9C2, 0px 11px 15px rgba(0, 0, 0, 0.25);
         background-color: $white;
         padding: 3rem; 
+        @media (max-width: $iphone-5) {
+            padding: 2rem; 
+        }
     }
     &.decor {
         position: relative;
@@ -814,6 +880,9 @@
             text-align: center;
             padding: .5rem;
         }
+        @media (max-width: $iphone-5) {
+            width: 140px;
+        }
     }
 }
 
@@ -835,9 +904,9 @@
     }
     .content {
         flex: 7 1 300px;
+        text-align: left;
     }
     p {
-        margin-bottom: 0;
         font-weight: 700;
     }
     @include md-block() {
@@ -869,6 +938,11 @@
             p {
                 font-size: 1.4rem;
             }
+        }
+    }
+    .levitating-block {
+        p {
+            margin-bottom: 0;
         }
     }
 }
@@ -908,10 +982,10 @@
 
 #quiz-section {
     background: $secondary-bg url('../img/quiz-bg.jpg') center / cover no-repeat;
-    height: 763px;
 }
 
 #how-we-work {
+    position: relative;
     .steps {
         max-width: 100%;
         max-height: 10rem;
@@ -941,6 +1015,23 @@
     }
     .plan {
         margin: 5rem 0 2rem;
+    }
+    .circle {
+        position: absolute;
+        opacity: .8;
+        transition: opacity .3s ;
+        &-right {
+            top: 5%;
+            right: 0;
+        }
+        &-left {
+            left: 0;
+            bottom: 5%;
+            transform: scaleX(-1);
+        }
+        @include md-block() {
+            opacity: .4;
+        }
     }
 }
 .plan {
@@ -1036,6 +1127,334 @@
     }
 }
 
+#about-company {
+    background: $gray url('../img/triangle-iversed-bg.jpg') top center / contain no-repeat;
+    text-align: center;
+
+    .levitating-block {
+        .icon {
+            margin-bottom: -3rem;
+        }
+        .btn-primary {
+            @include xs-block() {
+                font-size: 1.2rem;
+                padding: 2rem 1.5rem;
+                display: block;
+            }
+        }
+    }
+    .team,
+    .our-succsess {
+        margin-bottom: 10rem;
+        @include lg-block() {
+            margin-bottom: 5rem;
+        }
+    }
+
+    padding-bottom: 0;
+    .contacts {
+        margin-top: -30vh;
+        transform: translateY(30vh);
+    }
+    @include lg-block() {
+        padding-bottom: 5rem;
+        .contacts {
+            margin-top: 0;
+            transform: none;
+        }
+    }
+}
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -0.5rem;
+
+    &-member {
+        flex: 1 1 150px;
+        max-width: 160px;
+
+        margin: 0.5rem;
+        margin-bottom: 1rem;
+        
+        background: $white;
+        box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.25);
+        .img-wrapper {
+            height: 217px;
+        }
+        .body {
+            padding: 1rem;
+        }
+        .title {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        @media (max-width: $iphone-5) {
+            flex: 1 1 140px;
+            .title {
+                font-size: 1.6rem;
+            }
+            p {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+.our-succsess {
+    @include row-flex();
+    justify-content: center;
+    &__block {
+        @include col();
+        @include size(4);
+        @include size-md(6);
+
+        margin-bottom: 3rem;
+
+        .wreath {
+            &__digit {
+                color: $primary;
+                font-size: 7rem;
+                font-weight: bold;
+                line-height: 1;
+                margin-bottom: -2.5rem;
+                @include secondaryFont();
+                .sub {
+                    font-size: 2.7rem;
+                    display: block;
+                }
+            }
+            &__image {
+                max-height: 9rem;
+                margin-bottom: 3rem;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+        @include xs-block() {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            .wreath {
+                &__digit {
+                    font-size: 4rem;
+                    margin-bottom: -1.5rem;
+                    .sub {
+                        font-size: 1.8rem;
+                    }
+                }
+                &__image {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.contacts {
+    background-color: $primary;
+    box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.25);
+    color: $white;
+    text-align: left;
+
+    display: flex;
+    flex-wrap: wrap;
+    .logo {
+        margin-bottom: 2rem;
+        &-img {
+            @media (max-width: $iphone-5) {
+                max-width: unset;
+            }
+        }
+    }
+    .h2 {
+        color: $white;
+        margin-bottom: 1rem;
+    }
+    .with-icon {
+        display: flex;
+        margin-bottom: 2rem;
+        .icon {
+            width: 28px;
+            height: 28px;
+            margin-right: 1rem;
+            margin-top: 5px;
+        }
+        .text {
+            @include xs-block() {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .btn-filled {
+        margin: 1rem 0;
+        display: block;
+        max-width: 35rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .column {
+        padding: 3rem;
+        max-width: 47rem;
+        flex: 1 1 40rem;
+    }
+    .column-slider {
+        flex: 3 1 30rem;
+        background-color: $white;
+        position: relative;
+        overflow: hidden;
+    }
+    #our-office-slider {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        .slide {
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .slick-dots {
+            bottom: 2rem;
+            right: 2rem;
+        }
+    }
+}
+
+#map-section {
+    width: 100%;
+    position: relative;
+    padding-bottom: 42%;
+    min-height: 50rem;
+    overflow: hidden;
+    z-index: -1;
+}
+#map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// quiz
+#quiz {
+    max-width: 93rem;
+    margin-left: auto;
+    margin-right: auto;
+    .head {
+        min-height: 13rem;
+        margin-bottom: 3rem;
+        .step {
+            @include secondaryFont();
+            font-weight: 700;
+            font-size: 1.7rem;
+            color: #7D7D7D;
+            margin-bottom: 1.5rem;
+        }
+    }
+    .body {
+        height: 18rem;
+        margin-bottom: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .foot {
+        min-height: 8.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        .btn {
+            margin-left: auto;
+        }
+    }
+
+    .radio-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -1.5rem;
+        .radio-input {
+            margin: 1.5rem;
+        }
+    }
+    .screen {
+        display: none;
+        flex-direction: column;
+        min-height: 44.5rem;
+        &.active {
+            display: flex;
+        }
+        &[data-screen="thanks"] {
+            justify-content: center;
+            align-items: center;
+            .body {
+                min-height: 100%;
+                text-align: center;
+            }
+        }
+    }
+    @include xs-block() {
+        .content {
+            padding: 2rem;
+        }
+        .radio-row {
+            margin: -.5rem;
+            .radio-input {
+                margin: .5rem;
+            }
+        }
+        .head {
+            min-height: unset;
+            margin-bottom: 1rem;
+            .step {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+        }
+        .body {
+            height: unset;
+        }
+        .foot {
+            justify-content: center;
+            .btn {
+                margin-top: 1rem;
+                padding: 2rem;
+                display: block;
+                width: 100%;
+            }
+        }
+        .screen {
+            min-height: unset;
+        }
+        .h3 {
+            font-size: 1.6rem;
+        }
+    }
+    @media (max-width: $iphone-5) {
+        .h3 {
+            font-size: 1.4rem;
+        }
+        textarea {
+            min-height: 10rem;
+        }
+        input {
+            padding: 1.5rem 1rem;
+        }
+    }
+}
+
 // Modal
 .modal {
     display: none;
@@ -1081,5 +1500,14 @@
     }
     @include xs-block() {
         padding: 4rem 2rem;
+    }
+    @media (max-width: $iphone-5) {
+        padding: 3rem 2rem;
+        .subtitle {
+            margin-bottom: 2rem;
+        }
+        form .btn {
+            margin-top: 1rem;
+        }
     }
 }

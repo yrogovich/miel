@@ -48,15 +48,6 @@ $(function() {
         console.log(`LazyLoad plugin error: ${error}`);
     }
 
-    //AOS
-    try {
-        AOS.init({
-            duration: 1000, 
-        });
-    } catch (error) {
-        console.log(`AOS plugin error: ${error}`);
-    }
-
     // Smooth Scroll
     try {
         SmoothScroll({ 
@@ -139,40 +130,83 @@ $(function() {
         console.log(`SlickSlider plugin error: ${error}`);
     }
 
-    /*
+    try {
+        // Init
+        $('#our-office-slider').slick({
+            lazyLoad: 'progressive',
+            dots: true,
+            arrows: false,
+            speed: 800,
+        });
+    } catch (error) {
+        console.log(`SlickSlider plugin error: ${error}`);
+    }
+
+    try {
+        //Vars
+        let quiz = "#quiz";
+        let $activeScreen = $(`${quiz} [data-screen="1"]`);
+        let currentStep = $activeScreen.data('screen');
+        let countStep = $(`${quiz} [data-screen]`).length - 1;
+
+        addActive();
+
+        //Handlers
+        $(`${quiz} .next`).click(() => {         
+            if(currentStep >= countStep) {
+                return false;
+            }
+
+            removeActive();
+            currentStep++;
+            addActive();
+        });
+        $(`${quiz} .prev`).click(() => {             
+            if(currentStep <= 1) {
+                return false;
+            }
+
+            removeActive();
+            currentStep--;
+            addActive();
+        });
+        $(`${quiz}`).submit(function() {
+            removeActive();
+            addActive('thanks');
+        });
+
+        //Funcs
+        function removeActive() {
+            $activeScreen.removeClass('active');
+        }
+        function addActive(stepName) {
+            if(stepName) {
+                currentStep = stepName;
+            }
+
+            $activeScreen = $(`${quiz} [data-screen="${currentStep}"]`);
+            $activeScreen.addClass('active');
+            $activeScreen.find('.step').text(`Шаг ${currentStep} из ${countStep}`);
+        }
+
+    } catch (error) {
+        console.log(`Quiz error: ${error}`);
+    }
+
+    $('label[for^="radio"]').click(function(e) { 
+        e.preventDefault(); 
+        $(this).prev().prop('checked', true);
+    });
+
     //  Show ymaps on scroll
-    let point = $('#discounts');
+    let point = $('#about-company');
     let pointTop = point.offset().top;
     let handler = function () {
         let windowTop = $(this).scrollTop();
         if (windowTop > pointTop) {
-            $('#map').html('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7ebdb72eaffd8f5252bee2db8223a3e5d51e60278d52b1cc7e6b2288974cfa42&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>');
+            $('#map').html('<script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A56da67ebdfb8d445d7b810dc9618955960e32b2090e1f8f457625284101ea561&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>');
             $(window).unbind( "scroll", handler );
         }
     };
     $(window).bind( "scroll", handler ); 
-    */
 });
-
-/*
-// Youtube
-(function() {
-	let youtube = document.querySelectorAll( ".youtube" );	
-	for (let i = 0; i < youtube.length; i++) {		
-		let source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";		
-		let image = new Image();
-        image.src = source;
-        image.addEventListener( "load", function() {
-            youtube[ i ].appendChild( image );
-        }( i ) );		
-        youtube[i].addEventListener( "click", function() {
-            let iframe = document.createElement( "iframe" );
-                    iframe.setAttribute( "frameborder", "0" );
-                    iframe.setAttribute( "allowfullscreen", "" );
-                    iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
-                    this.innerHTML = "";
-                    this.appendChild( iframe );
-        } );	
-	};	
-})();
-*/

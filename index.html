@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -102,27 +101,42 @@
                     <!-- /.couple -->
                     
 
-                    <div class="header-slider">
+                    <div class="header-slider" >
                         <div id="slider">
                             <div class="slide">
                                 <span class="slide-text">Новостройки</span>
-                                <img class="slide-img" data-lazy="img/slider/slide-1.jpg" alt="slide">
+                                <img 
+                                    class="slide-img" 
+                                    data-lazy="img/slider/slide-1.jpg" 
+                                    alt="slide">
                             </div>
                             <div class="slide">
                                 <span class="slide-text">Загородная недвижимость</span>
-                                <img class="slide-img" data-lazy="img/slider/slide-2.jpg" alt="slide">
+                                <img 
+                                    class="slide-img" 
+                                    data-lazy="img/slider/slide-2.jpg" 
+                                    alt="slide">
                             </div>
                             <div class="slide">
                                 <span class="slide-text">Вторичное жилье</span>
-                                <img class="slide-img" data-lazy="img/slider/slide-3.jpg" alt="slide">
+                                <img 
+                                    class="slide-img" 
+                                    data-lazy="img/slider/slide-3.jpg" 
+                                    alt="slide">
                             </div>
                             <div class="slide">
                                 <span class="slide-text">Инвестиции в недвижимость</span>
-                                <img class="slide-img" data-lazy="img/slider/slide-4.jpg" alt="slide">
+                                <img 
+                                    class="slide-img" 
+                                    data-lazy="img/slider/slide-4.jpg" 
+                                    alt="slide">
                             </div>
                             <div class="slide">
                                 <span class="slide-text">Недвижимость за рубежом</span>
-                                <img class="slide-img" data-lazy="img/slider/slide-5.jpg" alt="slide">
+                                <img 
+                                    class="slide-img" 
+                                    data-lazy="img/slider/slide-5.jpg" 
+                                    alt="slide">
                             </div>
                         </div>
                         <!-- /#slider -->
@@ -329,7 +343,7 @@
             <div class="countries">
                 <div class="country">
                     <div class="image-wrapper">
-                        <img src="img/countries/canada.png" alt="Канада">
+                        <img class="lazy" data-src="img/countries/canada.png" alt="Канада">
                     </div>
                     <!-- /.image-wrapper -->
                     
@@ -338,7 +352,7 @@
                 <!-- /.country -->
                 <div class="country">
                     <div class="image-wrapper">
-                        <img src="img/countries/israel.png" alt="Израиль">
+                        <img class="lazy" data-src="img/countries/israel.png" alt="Израиль">
                     </div>
                     <!-- /.image-wrapper -->
 
@@ -347,7 +361,7 @@
                 <!-- /.country -->
                 <div class="country">
                     <div class="image-wrapper">
-                        <img src="img/countries/czech.png" alt="Чехия">
+                        <img class="lazy" data-src="img/countries/czech.png" alt="Чехия">
                     </div>
                     <!-- /.image-wrapper -->
 
@@ -520,9 +534,9 @@
 
     <div class="section" id="portfolio">
         <div class="container">
-            <div class="levitating-block">
+            <div class="levitating-block" >
                 <div class="icon">
-                    <img src="img/icons/time.svg" alt="time">
+                    <img class="lazy" data-src="img/icons/time.svg" alt="time">
                 </div>
                 <!-- /.icon -->
                 <div class="content">
@@ -674,23 +688,99 @@
         <div class="container">
             <div class="primary-card decor">
                 <div class="content">
-                    <div class="h2">Быстрая консультация:</div>
+                    <form id="quiz">
+                        <div class="screen" data-screen="1">
+                            <div class="head">
+                                <div class="step"></div>
+                                <div class="h3">Опишите объект, который Вы хотите купить или продать и мы оценим, на сколько его можно дороже продать или дешевле купить, работая с нами:</div>
+                            </div>
+                            <div class="body">
+                                <label for="message">Опишите Ваш объект:</label>
+                                <div class="input-wrapper">
+                                    <textarea name="message" id="message" placeholder="Квартира, дом, адрес, особенности, стоимость и т.д.
+Для покупки можно вставить ссылку на объект"></textarea>
+                                </div>
+                                <!-- /.input-wrapper -->
+                            </div>
+                            <div class="foot">
+                                <div class="pair">
+                                    <label>Вы хотите:</label>
+                                    <div class="radio-row">
+                                        <div class="radio-input">
+                                            <input type="radio" id="radio-1" name="radio-group" value="Купить" checked>
+                                            <label for="radio-1">Купить</label>
+                                        </div>
+                                        <div class="radio-input">
+                                            <input type="radio" id="radio-2" name="radio-group" value="Продать">
+                                            <label for="radio-2">Продать</label>
+                                        </div>
+                                        <div class="radio-input">
+                                            <input type="radio" id="radio-3" name="radio-group" value="Обменять">
+                                            <label for="radio-3">Обменять</label>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="couple">
-                        <a href="tel:+74957770370" class="btn btn-outline btn-phone">+7 (495) 777-03-70</a> 
-                        <span class="h3">или</span>
-                        <a href="https://api.whatsapp.com/send?phone=74957770370" target="_blank" class="btn btn-outline btn-whatsapp">Спросить в WhatsApp</a>
-                    </div>
-                    <!-- /.couple -->
-                    </div>
-                <!-- /.content -->
+                                <div class="btn btn-primary next">
+                                    <span>Следующий шаг</span>
+                                </div>
+                            </div>
+                            <!-- /.foot -->
+                            </div>
+                        <!-- /.screen -->
+                        <div class="screen" data-screen="2">
+                            <div class="head">
+                                <div class="step"></div>
+                                <div class="h3">Мы изучим Ваш объект и оценим его в ближайшее время.</div>
+                            </div>
+                            <div class="body">
+                                <div class="input-row">
+                                    <div class="input-wrapper">
+                                        <label for="name">Как к Вам обращаться</label>
+                                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                    <div class="input-wrapper">
+                                        <label for="email">Куда Вам прислать оценку</label>
+                                        <input type="email" id="email" name="email" placeholder="Ваш E-mail">
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                    <div class="input-wrapper">
+                                        <label for="email">Ваш телефон</label>
+                                        <input type="text" id="phone" name="phone" placeholder="Номер телефона" required>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                </div>
+                                <!-- /.input-row -->
+                            </div>
+                            <div class="foot">
+                                <button class="btn btn-primary">
+                                    <span>Отправить на оценку</span>
+                                </button>
+                            </div>
+                            <!-- /.foot -->
+                            </div>
+                        <!-- /.screen -->
+                        <div class="screen" data-screen="thanks">
+                            <div class="body">
+                                <div class="h2">Спасибо за заявку!</div>
+                                <p>Наш специалист в ближайшее время даст оценку вашего проекта.</p>
+                            </div>
+                        </div>
+                        <!-- /.screen -->
+                    </form>
+                    <!-- /#quiz -->
+                </div>
             </div>
             <!-- /.primary-card decor -->
         </div>
     </div>
     <!-- /#quiz-section.section -->
 
-    <div class="section" id="how-we-work">
+    <div class="section extended-section" id="how-we-work">
+        <img class="lazy" data-src="img/circle-right.svg" alt="circle" class="circle circle-right">
+        <img class="lazy" data-src="img/circle-right.svg" alt="circle" class="circle circle-left">
+
         <div class="container">
             <div class="h2 decor">
                 <span>Как мы работаем:</span>
@@ -877,6 +967,228 @@
     </div>
     <!-- /#how-we-work.section -->
 
+    <div class="section" id="about-company">
+        <div class="container">
+            <div class="levitating-block" >
+                <div class="icon">
+                    <img src="img/icons/download-pdf.svg" alt="pdf">
+                </div>
+                <!-- /.icon -->
+                <div class="content">
+                    <div class="h2">Буклет о самом главном</div>
+                    <p>Посмотрите в нашем PDF буклете за счет чего мы достигаем более высокой цены при продаже и более низкой цены при покупке и как мы экономим десятки часов Вашего времени:</p>
+                    <a href="pdf/sample.pdf" target="_blank" class="btn btn-primary">
+                        <span>Скачать PDF буклет с самым главным</span>
+                    </a>
+                </div>
+            </div>
+            <!-- /.levitating-block -->
+
+            <div class="h2 decor">
+                <span>О нашей компании:</span>
+            </div>
+            <div class="h3 black">Наша команда:</div>
+            <div class="team">
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img 
+                             class="lazy-blur" 
+                             data-src="img/team/Natalia-Gorchakova.jpg" 
+                             src="img/team/thumbs/Natalia-Gorchakova.jpg"/>
+                    </div>
+                    <div class="body">
+                        <div class="title">Горчакова Наталия</div>
+                        <p>эксперт загородной и городской недвижимости</p>
+                    </div>
+                </div>
+                <!-- /.team-member -->
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img 
+                             class="lazy-blur" 
+                             data-src="img/team/Antipova-Maria.jpg" 
+                             src="img/team/thumbs/Antipova-Maria.jpg"/>
+                    </div>
+                    <div class="body">
+                        <div class="title">Антипова Мария</div>
+                        <p>эксперт загородной и городской недвижимости</p>
+                    </div>
+                </div>
+                <!-- /.team-member -->
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img 
+                             class="lazy-blur" 
+                             data-src="img/team/Kozlova-Maria.jpg" 
+                             src="img/team/thumbs/Kozlova-Maria.jpg"/>
+                    </div>
+                    <div class="body">
+                        <div class="title">Козлова Мария</div>
+                        <p>специалист городской недвижимости</p>
+                    </div>
+                </div>
+                <!-- /.team-member -->
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img 
+                             class="lazy-blur" 
+                             data-src="img/team/Denisova-Elena.jpg" 
+                             src="img/team/thumbs/Denisova-Elena.jpg"/>
+                    </div>
+                    <div class="body">
+                        <div class="title">Денисова Елена</div>
+                        <p>эксперт городской недвижимости</p>
+                    </div>
+                </div>
+                <!-- /.team-member -->
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img 
+                             class="lazy-blur" 
+                             data-src="img/team/Vladimir-Kholin.jpg" 
+                             src="img/team/thumbs/Vladimir-Kholin.jpg"/>
+                    </div>
+                    <div class="body">
+                        <div class="title">Холин Владимир</div>
+                        <p>эксперт городской недвижимости</p>
+                    </div>
+                </div>
+                <!-- /.team-member -->
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img 
+                             class="lazy-blur" 
+                             data-src="img/team/Kholina-Anna.jpg" 
+                             src="img/team/thumbs/Kholina-Anna.jpg"/>
+                    </div>
+                    <div class="body">
+                        <div class="title">Холина <br> Анна</div>
+                        <p>юрист</p>
+                    </div>
+                </div>
+                <!-- /.team-member -->
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img 
+                             class="lazy-blur" 
+                             data-src="img/team/Ohmylove-Tatiana.jpg" 
+                             src="img/team/thumbs/Ohmylove-Tatiana.jpg"/>
+                    </div>
+                    <div class="body">
+                        <div class="title">Ахмылова Татьяна</div>
+                        <p>офис менеджер</p>
+                    </div>
+                </div>
+                <!-- /.team-member -->
+            </div>
+            <!-- /.team -->
+
+            <div class="h3 black">Компания в цифрах:</div>
+            <div class="our-succsess">
+                <div class="our-succsess__block">
+                    <div class="wreath">
+                        <div class="wreath__digit">
+                            30 <span class="sub">лет</span>
+                        </div>
+                        <div class="wreath__image">
+                            <img class="lazy" data-src="img/icons/wreath.svg" alt="wreath">
+                        </div>
+                    </div>
+                    <!-- /.wreath -->
+                    <div class="bold">30 лет успешной работы</div>
+                </div>
+                <!-- /.our-succsess__block -->
+                <div class="our-succsess__block">
+                    <div class="wreath">
+                        <div class="wreath__digit">
+                            140  <span class="sub">филиалов</span>
+                        </div>
+                        <div class="wreath__image">
+                            <img class="lazy" data-src="img/icons/wreath.svg" alt="wreath">
+                        </div>
+                    </div>
+                    <!-- /.wreath -->
+                    <div class="bold">Сеть из 140 филиалов по всей России</div>
+                </div>
+                <!-- /.our-succsess__block -->
+                <div class="our-succsess__block">
+                    <div class="wreath">
+                        <div class="wreath__digit">
+                            50 000 <span class="sub">сделок</span>
+                        </div>
+                        <div class="wreath__image">
+                            <img class="lazy" data-src="img/icons/wreath.svg" alt="wreath">
+                        </div>
+                    </div>
+                    <!-- /.wreath -->
+                    <div class="bold">Более 50 000 успешных сделок</div>
+                </div>
+                <!-- /.our-succsess__block -->
+            </div>
+            <!-- /.our-succsess -->
+
+            <div class="contacts">
+                <div class="column">
+                    <a href="index.html" class="logo">
+                        <img class="logo-img" src="img/logo-inverse.svg" alt="Агентство недвижимости Миэль">
+                    </a>
+                    <div class="h2">Контакты:</div>
+                    <p class="bold">Агентство недвижимости Миэль <br> Офис - «На Третьяковской»</p>
+                    <div class="with-icon">
+                        <img src="img/icons/map-point.svg" alt="map-point" class="icon">
+                        <div class="text">
+                            <div>«Третьяковская» <br>
+                                Москва, Пыжевский переулок, 5 стр. 1</div>
+                        </div>
+                    </div>
+                    <div class="with-icon">
+                        <img src="img/icons/calendar.svg" alt="calendar" class="icon">
+                        <div class="text">
+                            <div>пн-пт: с 9:00 до 20:00</div>
+                            <div>сб: с 10:00 до 17:00</div>
+                            <div>вс: с 10:00 до 17:00</div>
+                        </div>
+                    </div>
+
+                    <a href="tel:+74957770370" class="btn btn-filled btn-phone">+7 (495) 777-03-70</a> 
+                    <a href="https://api.whatsapp.com/send?phone=74957770370" target="_blank" class="btn btn-filled btn-whatsapp">Спросить в WhatsApp</a>
+                </div>
+                <!-- /.column -->
+                <div class="column-slider">
+                    <div id="our-office-slider">
+                        <div class="slide">
+                            <img 
+                                class="slide-img" 
+                                data-lazy="img/office-photos/photo-1.jpg" 
+                                alt="slide">
+                        </div>
+                        <div class="slide">
+                            <img 
+                                class="slide-img" 
+                                data-lazy="img/office-photos/photo-1.jpg" 
+                                alt="slide">
+                        </div>
+                        <div class="slide">
+                            <img 
+                                class="slide-img" 
+                                data-lazy="img/office-photos/photo-1.jpg" 
+                                alt="slide">
+                        </div>
+                    </div>
+                    <!-- /#our-office-slider -->
+                </div>
+                <!-- /.column-slider -->
+            </div>
+            <!-- /.contacts -->
+        </div>
+    </div>
+    <!-- /#about-company.section -->
+
+    <div id="map-section">
+        <div id="map"></div>
+    </div>
+    
+
     <!-- Modal HTML embedded directly into document -->
     <div id="free-consult-modal" class="modal"> 
         <div class="h3">Бесплатная консультация</div>
@@ -910,13 +1222,11 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.2.0/dist/simpleParallax.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-    <script src="js/index.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+    <script defer src="js/index.js"></script>
 </body>
 </html>

@@ -83,6 +83,9 @@ h4, .h4 {
 h1, .h1 {
     font-size: 3.8vh;
     @include xs(font-size, 2.2rem);
+    @media (max-width: $iphone-5) {
+        font-size: 2rem;
+    }
 }
 
 h2, .h2 {
@@ -130,12 +133,117 @@ h4,.h4 {
     font-size: 1.7rem;
 }
 
+//Form elements
+.input-wrapper {
+    margin-bottom: 1rem;
+}
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+    .input-wrapper {
+        input {
+            height: unset;
+        }
+        height: unset;
+        flex: 1 1 25rem;
+        margin: 0.5rem;
+    }
+}
+
 input,
 textarea {
     background-color: #F9F9F9;
     border: 1px solid #C6C6C6;
     padding: 2rem;
     color: #7D7D7D;
-    margin-bottom: 1rem;
     width: 100%;
+    height: 100%;
+}
+
+textarea {
+    resize: none;
+    min-height: 15rem;
+}
+
+label {
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    cursor: pointer;
+    position: relative;
+    padding-left: 39px;
+    line-height: 29px;
+    font-weight: normal;
+}
+[type="radio"]:checked + label {
+    color: $primary;
+    text-shadow: 1px 0 0px $primary;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 29px;
+    height: 29px;
+    border-radius: 100%;
+    background: #F0F0F0;
+    border: 1px solid #C6C6C6;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 21px;
+    height: 21px;
+    background: linear-gradient(180deg, #951A4A 0%, #C92263 100%), #951A4A;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+@include xs-block() {
+    textarea {
+        font-size: 1.2rem;  
+        padding: 1rem;
+    }
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before {
+        width: 19px;
+        height: 19px;
+    }
+    [type="radio"]:checked + label:after, 
+    [type="radio"]:not(:checked) + label:after {
+        width: 11px;
+        height: 11px;
+    }
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label
+    {
+        cursor: pointer;
+        position: relative;
+        padding-left: 22px;
+        line-height: 19px;
+        font-size: 1.3rem;
+    }
 }
