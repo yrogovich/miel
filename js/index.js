@@ -10,27 +10,30 @@ $(function() {
 
         console.log('form func is running');
 
-        let msg = jQuery(this).serialize();
+        let msg = $(this).serialize();
+        let formId = $(this).attr('id');
         let $url = `${window.location.protocol}//${window.location.host}`;
 
-        jQuery.ajax({
+        $.ajax({
             type: 'POST',
             url: `${$url}/send.php`,
             data: msg,
             success: function(data) {
                 console.log('form ok');
-                jQuery.fancybox.close();
-                jQuery.fancybox.open({
-                    src: '#thanks-modal', 
-                    modal: true
-                });
-                setTimeout(() => { 
-                    jQuery.fancybox.close();
-                }, 2000);
+                if(formId != 'quiz') {
+                    $.fancybox.close();
+                    $.fancybox.open({
+                        src: '#thanks-modal', 
+                        modal: true
+                    });
+                    setTimeout(() => { 
+                        $.fancybox.close();
+                    }, 2000);
+                }
             },
             error: function () {
                 console.log('form error');
-                jQuery.fancybox.close();
+                $.fancybox.close();
             }
         });
     });

@@ -19,10 +19,15 @@ $message = '
             $message .= '<p>Email: '.$_POST['email'].'</p>';
         if(isset($_POST['message']) && $_POST['message'] !== '')
             $message .= '<p>Сообщение: '.$_POST['message'].'</p>';
+        if(isset($_POST['radio-group']) && $_POST['radio-group'] !== '')
+            $message .= '<p>Я хочу: '.$_POST['radio-group'].'</p>';
 
 $message .= '                 
             </body>
         </html>'; 
 $headers  = "Content-type: text/html; charset=utf-8 \r\n";
 $headers .= "From: form@".$_SERVER['SERVER_NAME']."\r\n"; 
-mail($to, $subject, $message, $headers); 
+
+if(isset($_POST['name']) && $_POST['name'] !== '') {
+    mail($to, $subject, $message, $headers); 
+}
