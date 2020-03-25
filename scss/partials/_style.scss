@@ -602,7 +602,10 @@
 }
 
 #we-support-with {
-    background: $white url('../img/triangle-bg.jpg') center / cover no-repeat;
+    background-color: $gray;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .features {
     @include row-flex();
@@ -736,7 +739,11 @@
 }
 
 #fast-consult {
-    background: $secondary-bg url('../img/free-consult-bg.jpg') center / cover no-repeat;
+    background-color: $secondary-bg;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     padding: 6rem 0;
     .couple {
         margin: -3rem;
@@ -800,7 +807,11 @@
 
 
 #ww-realty {
-    background: $white url('../../img/map-bg.png') top center/ contain no-repeat;
+    background-color: $white;
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
     margin-top: 4rem;
     padding-top: 6rem;
     text-align: center;
@@ -925,7 +936,11 @@
 }
 
 #portfolio {
-    background: $gray url('../img/triangle-wide-bg.jpg') center / cover no-repeat;
+    background-color: $gray;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     .services {
         justify-content: center;
         margin-bottom: 2rem;
@@ -981,7 +996,10 @@
 }
 
 #quiz-section {
-    background: $secondary-bg url('../img/quiz-bg.jpg') center / cover no-repeat;
+    background-color: $secondary-bg;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #how-we-work {
@@ -1128,7 +1146,11 @@
 }
 
 #about-company {
-    background: $gray url('../img/triangle-iversed-bg.jpg') top center / contain no-repeat;
+    background-color: $gray;
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
     text-align: center;
 
     .levitating-block {
