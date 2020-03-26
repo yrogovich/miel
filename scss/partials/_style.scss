@@ -1153,6 +1153,9 @@
 
     text-align: center;
 
+    position: relative;
+    z-index: 1;
+
     .levitating-block {
         .icon {
             margin-bottom: -3rem;
@@ -1357,7 +1360,7 @@
     padding-bottom: 42%;
     min-height: 50rem;
     overflow: hidden;
-    z-index: -1;
+    z-index: 0;
 }
 #map {
     position: absolute;

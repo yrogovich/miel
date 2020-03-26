@@ -91,7 +91,6 @@ $(function() {
             lazyLoad: 'progressive',
             dots: true,
             arrows: false,
-            // fade: true,
             speed: 800,
         });
        
@@ -140,6 +139,8 @@ $(function() {
             dots: true,
             arrows: false,
             speed: 800,
+            autoplay: true,
+            autoplaySpeed: 3000
         });
     } catch (error) {
         console.log(`SlickSlider plugin error: ${error}`);
