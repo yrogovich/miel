@@ -52,14 +52,14 @@ $(function() {
     }
 
     // Smooth Scroll
-    try {
-        SmoothScroll({ 
-            animationTime: 900,
-            stepSize: 85,
-        });
-    } catch (error) {
-        console.log(`SmoothScroll plugin error: ${error}`);
-    }
+//     try {
+//         SmoothScroll({ 
+//             animationTime: 900,
+//             stepSize: 85,
+//         });
+//     } catch (error) {
+//         console.log(`SmoothScroll plugin error: ${error}`);
+//     }
 
     try {
         let autoplaySpeed = 3000; //ms
